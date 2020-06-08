@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact
+{% endblock title %}
+{% block contactactive %}active
+      {% endblock contactactive %}
+{% block css %}
+<style>
+body{
+    
+}
+
+</style>
+{% endblock css %}
+
+{% block body %}
+<h1 class="text-center mt-5 mb-5"> Contact Admin</h1>
+<div class="container frm align-items-center mt-5">
+<form action="/contact" method="post">
+  {% csrf_token %}
+  <div class="form-row">
+    <div class="col">
+      <label for="inputname">Name</label>
+      <input type="text" class="form-control" placeholder="First name" name="name">
+    </div>
+    <div class="col ">
+    <label for="inputlast">Phone</label>
+      <input type="number" class="form-control" placeholder="Phone number"name="phone">
+    </div>
+  </div>
+   <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email">
+    </div>
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1">Message</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
+  </div>
+  <button type="submit" class="btn btn-dark btn-lg mt-3 ">Submit</button>
+</form>
+</div>
+{% endblock body %}
